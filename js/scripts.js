@@ -11,8 +11,8 @@ function Player (player1, player2, game){
 function Game (turnScore, totalScore, gameWins, gameLoses) {
   this.turnScore = 0;
   this.totalScore = 0;
-  this.gameWins = 0;
-  this.gameLoses = 0;
+  this.gameWins = 0; // add functionality
+  this.gameLoses = 0; // add functionality 
 }
 
 // Switch player turn function (needs work)
@@ -42,8 +42,8 @@ Game.prototype.roll = function() {
 
 Game.prototype.hold = function() {
   this.totalScore += this.turnScore; // add turnScore to players totalScore
-  alert("Your turn is over pass the mouse!");
   this.turnScore = 0;
+  alert("Your turn is over pass the mouse!");
   // SwitchUser(); // changes players
   console.log("your total score:" + this.totalScore);
 }
@@ -69,4 +69,4 @@ $(document).ready(function(){
     playerTwo.hold();
     $(".p2-total").text(" " + playerTwo.totalScore);
   })
-})    
+});    
