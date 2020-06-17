@@ -5,7 +5,7 @@ function Player (player1, player2, game){
 }
 
 function Game (turnScore, total, gameWins, gameLoses) {
-  this.turnScore = 0;
+  this.turnScore = 100;
   this.totalScore = 0;
   this.gameWins = 0;
   this.gameLoses = 0;
@@ -21,37 +21,31 @@ Player.prototype.switchUser = function() {
 }
 
 Game.prototype.roll = function() {
-  let newRoll = Math.floor(Math.random() * 6) + 1;
+  let newRoll = Math.floor((Math.random() * 6) + 1);
   if (newRoll !== 1) {
     this.turnScore += newRoll;
+  } else if (totalScore += turnScore >= 100) {
+    alert("You won!");
   } else {
     alert("You rolled a 1! Your score for this round is 0, and your turn is over!");
     Player.switchUser();
      // changes players
   }
+  return newRoll;
 }
 
-Dice.prototype.hold = function() {
+Game.prototype.hold = function() {
   return this.turnScore += this.totalScore
   alert("Your turn is over pass the mouse!");
   Player.switchUser(); // changes players
 }
 
-
-// function P1 (p1Total, p1Wins, p1Loses){
-//     this.p1Total = 0;
-//     this.p1Wins = 0;
-//     this.p1Loses = 0;
-// }
-  
-// function P2 (p2Total, p2Wins, p2Loses){
-//     this.p2Total = 0;
-//     this.p2Wins = 0;
-//     this.p2Loses = 0;
-// }
-  
-// function Dice (hold, score){
-//     this.hold = hold;
-// }
-
 //UI Logic
+$(document).ready(function(){
+  $("#roll").click(function() {
+    
+  $("#hold").click(function() {
+    
+  })
+  })
+})
