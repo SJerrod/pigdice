@@ -8,8 +8,7 @@
 
 ## Setup
 
-* [Open page in browser]()
-* [Github repo]()
+* [Github repo](https://github.com/SJerrod/pigdice.git)
 * To open via Download click clone or download
 * Double click index.html to open in web browser
 * Or clone the directory onto your computer
