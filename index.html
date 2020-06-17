@@ -3,27 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.5.1.js"></script>
   <script src="js/scripts.js"></script>
   <title>Pig Dice</title>
 </head>
 <body>
-  <div id="pig-dice">
-    <div class="container1">
-      <h3>Player 1</h3>
-      <p>Total: <span class="p1-total"></span></p>
-      <p>Turn Score: <span class="p1-score"></span></p>
-      <button type="click" id="roll-player-one">Roll</button>
-      <button type="click" id="hold-player-one">Hold</button>
+    <div class="jumbotron jumbotron-fluid jumbotron1">
+      <div class="container">
+        <h1 class="display-4">Pig Dice</h1>
+        <p class="lead">Oink Oink</p>
+      </div>
     </div>
-    <div class="container2">
-      <h3>Player 2</h3>
-      <p>Total: <span class="p2-total"></span></p>
-      <p>Turn Score: <span class="p2-score"></span></p>
-      <button type="click" id="roll-player-two">Roll</button>
-      <button type="click" id="hold-player-two">Hold</button>
+  <div id="pig-dice">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card" style="width: 18rem;">
+            <h3>Player 1</h3>
+            <p>Total: <span class="p1-total"></span></p>
+            <p>Turn Score: <span class="p1-score"></span></p> 
+            <div class="card-body">
+              <div class="card-title">
+                <button class="btn btn-danger" type="click" id="roll-player-one">Roll</button>
+                <button class="btn btn-info" type="click" id="hold-player-one">Hold</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">  
+          <div class="card" style="width: 18rem;">
+            <h3>Player 2</h3>
+            <p>Total: <span class="p2-total"></span></p>
+            <p>Turn Score: <span class="p2-score"></span></p>
+            <div class="card-body">
+              <button class="btn btn-danger" type="click" id="roll-player-two">Roll</button>
+              <button class="btn btn-info" type="click" id="hold-player-two">Hold</button>
+            </div>
+          </div>      
+        </div>
+      </div>  
     </div>
   </div>
 </body>

@@ -1,7 +1,31 @@
-.container1 {
-  display: block;
+body {
+  background-image: url(../images/pig.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  float: auto;
 }
 
-container2 {
-  display: block;
+.jumbotron1 {
+  background-color: pink;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
+}
+.display-4 {
+  font-family: cursive;
+  font-weight: bolder;
+}
+
+p.lead {
+font-family: cursive;
+font-weight: bolder;
+}
+
+#pig-dice{
+  padding-top: 10%;
+}
+
+.card {
+  opacity: .8;
 }
