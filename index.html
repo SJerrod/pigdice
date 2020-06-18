@@ -16,14 +16,20 @@
       <p class="lead">Oink Oink</p>
     </div>
   </div>
+  <br>
   <form id="player-names">
     <div class="container">
-      <label for="player-1-name" >Player 1 Name</label>
+      <br>
+      <label for="player-1-name" >Player 1 Enter Name</label>
+      <br>
       <input id="player-1-name" type="text" class="form-control">
-      <label for="player-2-name" >Player 2 Name</label>
+      <br>
+      <label for="player-2-name" >Player 2 Enter Name</label>
+      <br>
       <input id="player-2-name" type="text" class="form-control">
-      <button type="submit" id="player-names">Submit players</button>
-      <button type="reset" id="new-game">Play Again</button>
+      <br>
+      <button type="submit" class="btn btn-danger btn-lg" id="player-names">Submit players</button>
+      
     </div>
   </form>
   <div id="pig-dice">  
@@ -32,9 +38,10 @@
         <div id="player1">
           <div class="col-md-4">
             <div class="card">
-              <h3>Player 1</h3>
+              <h3>Player 1: <span id="p1name"></span> </h3>
+              <p>Turn Score: <span class="p1-score"></span></p>
               <p>Total: <span class="p1-total"></span></p>
-              <p>Turn Score: <span class="p1-score"></span></p> 
+              <p>Wins: <span class="p1-win"></span></p>
               <div class="card-body1">
                 <div class="card-title">
                   <button class="btn btn-danger btn-lg" type="click" id="roll-player-one">Roll</button>
@@ -47,14 +54,17 @@
         <div class="col-md-4">
           <div class="dice">
             <h2 id="dice-status"></h2>
-          </div>
+          </div> 
+          <br>
+          <button type="reset" class="btn btn-danger btn-lg" id="new-game" value="reset">"Play Again"</button>
         </div>
         <div id="player2">
           <div class="col-md-4">  
             <div class="card">
-              <h3>Player 2</h3>
-              <p>Total: <span class="p2-total"></span></p>
+              <h3>Player 2: <span id="p2name"></span> </h3>
               <p>Turn Score: <span class="p2-score"></span></p>
+              <p>Total: <span class="p2-total"></span></p>
+              <p>Wins: <span class="p2-win"></span></p>
               <div class="card-body2">
                 <button class="btn btn-danger btn-lg" type="click" id="roll-player-two">Roll</button>
                 <button class="btn btn-info btn-lg" type="click" id="hold-player-two">Hold</button>

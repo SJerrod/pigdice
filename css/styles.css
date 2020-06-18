@@ -22,13 +22,14 @@ font-family: cursive;
 font-weight: bolder;
 }
 
-#pig-dice{
+#pig-dice {
   padding-top: 10%;
+  display: none;
 }
 
 .card {
   opacity: .8;
-  height: 200px;
+  height: 250px;
   width: 350px;
   text-align: center;
 }
@@ -45,4 +46,19 @@ font-weight: bolder;
   align-items: center;
   margin-left:100px; 
   float: center;
+}
+
+#player-names {
+  font-family:cursive;
+  font-weight:bolder;
+  font-size: 30px;
+  text-align: center;
+}
+
+div.card p {
+  font-size: x-large;
+}
+
+.card-body2 {
+  display: none;
 }
