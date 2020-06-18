@@ -1,19 +1,9 @@
-@font-face {
-  font-family: 'barcade_bold_italicBdIt';
-  src: url('barcadebolditalic-8pqd-webfont.woff2') format('woff2');
-  src: url('barcadebolditalic-8pqd-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
 body {
   background-image: url(../images/pig.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   margin: auto;
   float: auto;
-  font-family:  url('barcadebolditalic-8pqd-webfont.woff2') format('woff2');
   padding-bottom: 10%;
   
 }

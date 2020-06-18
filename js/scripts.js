@@ -10,11 +10,11 @@ function Player (player1, player2){
 function Game () {
   this.turnScore = 0;
   this.totalScore = 0;
-  this.gameWins = 0; // add functionality
+  this.gameWins = 0;
 }
 
 Game.prototype.winner = function() {
-  if (this.totalScore + this.turnScore >= 25) {
+  if (this.totalScore + this.turnScore >= 10) {
     (this.gameWins += 1) && (this.turnScore = 0) && (this.totalScore = 0);
     SwitchUser();
     confirm("Play again?");
@@ -45,9 +45,10 @@ Game.prototype.roll = function() {
   diceStatus.innerHTML = newRoll;
   if (newRoll != 1) {
     this.turnScore += newRoll; // pushes new roll into turnScore
-    if (this.totalScore + this.turnScore >= 25) {
-      this.winner;
+    if (this.totalScore + this.turnScore >= 10) {
       alert("You won!");
+      this.totalScore = 0
+      this.winner;
     }
   } else { // If user rolls one you will get this alert
     alert("You rolled a 1! Your score for this round is 0, and your turn is over!");
