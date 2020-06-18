@@ -13,8 +13,11 @@ function Game () {
   this.gameWins = 0; // add functionality
 }
 
-function Winner() {{
-  this.gameWins += 1; 
+Game.prototype.winner = function() {
+  if (this.totalScore + this.turnScore >= 25) {
+    (this.gameWins += 1) && (this.turnScore = 0) && (this.totalScore = 0);
+    SwitchUser();
+    confirm("Play again?");
   }
   return this.gameWins;
 }
@@ -42,23 +45,22 @@ Game.prototype.roll = function() {
   diceStatus.innerHTML = newRoll;
   if (newRoll != 1) {
     this.turnScore += newRoll; // pushes new roll into turnScore
-    if (this.totalScore + this.turnScore >= 10) {
-      Winner();
+    if (this.totalScore + this.turnScore >= 25) {
+      this.winner;
       alert("You won!");
     }
   } else { // If user rolls one you will get this alert
     alert("You rolled a 1! Your score for this round is 0, and your turn is over!");
+    this.turnScore = 0;
     SwitchUser();
   }
   return this.totalScore;
 }
 
 Game.prototype.hold = function() {
-  this.totalScore += this.turnScore; // add turnScore to players totalScore
-  this.turnScore = 0
   SwitchUser(); // changes players
-  alert("Your turn is over pass the mouse!");
-  console.log("your total score:" + this.totalScore);
+  this.totalScore += this.turnScore; // add turnScore to players totalScore
+  this.turnScore = 0;
 }
 
 //UI Logic
@@ -76,6 +78,7 @@ $(document).ready(function(){
   let playerTwo = new Game("player2");
   $("#roll-player-one").click(function() {
     playerOne.roll();
+    playerOne.winner();
     $(".p1-score").text(" " + playerOne.turnScore);
     $(".p1-win").text(" " + playerOne.gameWins);
   })
@@ -85,14 +88,12 @@ $(document).ready(function(){
   })
   $("#roll-player-two").click(function() {
     playerTwo.roll();
+    playerTwo.winner();
     $(".p2-score").text(" " + playerTwo.turnScore);
     $(".p2-win").text(" " + playerTwo.gameWins);
   })
   $("#hold-player-two").click(function() {
     playerTwo.hold();
     $(".p2-total").text(" " + playerTwo.totalScore);
-  })
-  $("#new-game").click(function() {
-    $(".p2-score", ".p2-total", ".p1-score", ".p1-total").reset("0");
   })
 });    

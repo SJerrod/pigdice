@@ -10,10 +10,16 @@
   <title>Pig Dice</title>
 </head>
 <body>
-  <div class="jumbotron jumbotron-fluid jumbotron1">
-    <div class="container">
+    <div class="jumbotron">
       <h1 class="display-4">Pig Dice</h1>
-      <p class="lead">Oink Oink</p>
+      <p class="lead">This is a simple two player dice game. Want to test your luck?</p>
+      <hr class="my-4">
+      <p class="rules"><strong>Rules</strong></p>
+      <ol class="center">
+        <li>First player to stash 25 total points <strong>Wins!!!</strong></li>
+        <li>When a player rolls 1 they earn no points this round, and it switches players.</li>
+        <li>Press hold to stash your points earned this round and switch players.</li>
+      </ol>
     </div>
   </div>
   <br>
@@ -54,9 +60,7 @@
         <div class="col-md-4">
           <div class="dice">
             <h2 id="dice-status"></h2>
-          </div> 
-          <br>
-          <button type="reset" class="btn btn-danger btn-lg" id="new-game" value="reset">"Play Again"</button>
+          </div>
         </div>
         <div id="player2">
           <div class="col-md-4">  
