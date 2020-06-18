@@ -28,4 +28,7 @@ font-weight: bolder;
 
 .card {
   opacity: .8;
+  height: 200px;
+  width: 350px;
+  text-align: center;
 }

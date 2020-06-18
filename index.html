@@ -10,44 +10,58 @@
   <title>Pig Dice</title>
 </head>
 <body>
-    <div class="jumbotron jumbotron-fluid jumbotron1">
-      <div class="container">
-        <h1 class="display-4">Pig Dice</h1>
-        <p class="lead">Oink Oink</p>
-      </div>
+  <div class="jumbotron jumbotron-fluid jumbotron1">
+    <div class="container">
+      <h1 class="display-4">Pig Dice</h1>
+      <p class="lead">Oink Oink</p>
     </div>
+  </div>
+  <form id="player-names">
+    <div class="container">
+      <label for="player-1-name" >Player 1 Name</label>
+      <input id="player-1-name" type="text" class="form-control">
+      <label for="player-2-name" >Player 2 Name</label>
+      <input id="player-2-name" type="text" class="form-control">
+      <button type="submit" id="player-names">Submit players</button>
+      <button type="reset" id="new-game">Play Again</button>
+    </div>
+  </form>
   <div id="pig-dice">  
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <div class="card" style="width: 18rem;">
-            <h3>Player 1</h3>
-            <p>Total: <span class="p1-total"></span></p>
-            <p>Turn Score: <span class="p1-score"></span></p> 
-            <div class="card-body">
-              <div class="card-title">
-                <button class="btn btn-danger" type="click" id="roll-player-one">Roll</button>
-                <button class="btn btn-info" type="click" id="hold-player-one">Hold</button>
+        <div id="player1">
+          <div class="col-md-4">
+            <div class="card">
+              <h3>Player 1</h3>
+              <p>Total: <span class="p1-total"></span></p>
+              <p>Turn Score: <span class="p1-score"></span></p> 
+              <div class="card-body1">
+                <div class="card-title">
+                  <button class="btn btn-danger" type="click" id="roll-player-one">Roll</button>
+                  <button class="btn btn-info" type="click" id="hold-player-one">Hold</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-4">
           <div class="dice">
             <!-- add image of dice depending on rewRole-->
           </div>
         </div>
-        <div class="col-md-4">  
-          <div class="card" style="width: 18rem;">
-            <h3>Player 2</h3>
-            <p>Total: <span class="p2-total"></span></p>
-            <p>Turn Score: <span class="p2-score"></span></p>
-            <div class="card-body">
-              <button class="btn btn-danger" type="click" id="roll-player-two">Roll</button>
-              <button class="btn btn-info" type="click" id="hold-player-two">Hold</button>
-            </div>
-          </div>      
-        </div>
+        <div id="player2">
+          <div class="col-md-4">  
+            <div class="card">
+              <h3>Player 2</h3>
+              <p>Total: <span class="p2-total"></span></p>
+              <p>Turn Score: <span class="p2-score"></span></p>
+              <div class="card-body2">
+                <button class="btn btn-danger" type="click" id="roll-player-two">Roll</button>
+                <button class="btn btn-info" type="click" id="hold-player-two">Hold</button>
+              </div>
+            </div>      
+          </div>
+        </div>  
       </div>  
     </div>
   </div>

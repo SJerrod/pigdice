@@ -8,7 +8,7 @@ function Player (player1, player2, game){
   this.currentPlayer = "player1";
 }
 
-function Game (turnScore, totalScore, gameWins, gameLoses) {
+function Game () {
   this.turnScore = 0;
   this.totalScore = 0;
   this.gameWins = 0; // add functionality
@@ -18,10 +18,14 @@ function Game (turnScore, totalScore, gameWins, gameLoses) {
 // Switch player turn function (needs work)
 function SwitchUser () {
   this.turnScore = 0; // clear turn points when players switch
-  if (this.currentPlayer === "player1") { // checks to see if current player is at index 0 (player1)
-    this.currentPlayer = "player2"; // makes player2 current player
-  } else {
-    this.currentPlayer = "player1"; // makes player 1 current player
+  if (this.currentPlayer === "player2") { // checks to see if current player is at index 0 (player1)
+    this.currentPlayer = "player1"; // makes player2 current player
+    $(".card-body1").show();
+    $(".card-body2").hide();
+    } else {
+      this.currentPlayer = "player2"; // makes player 1 current player
+      $(".card-body2").show();
+      $(".card-body1").hide();
   }
 }
 
@@ -35,16 +39,17 @@ Game.prototype.roll = function() {
       alert("You won!");
     }
   } else { // If user rolls one you will get this alert
-    alert("You rolled a 1! Your score for this round is 0, and your turn is over!"); 
+    alert("You rolled a 1! Your score for this round is 0, and your turn is over!");
+    SwitchUser();
   }
   return this.totalScore;
 }
 
 Game.prototype.hold = function() {
   this.totalScore += this.turnScore; // add turnScore to players totalScore
-  this.turnScore = 0;
+  this.turnScore = 0
+  SwitchUser(); // changes players
   alert("Your turn is over pass the mouse!");
-  // SwitchUser(); // changes players
   console.log("your total score:" + this.totalScore);
 }
 
@@ -54,7 +59,6 @@ $(document).ready(function(){
   let playerTwo = new Game("player2");
   $("#roll-player-one").click(function() {
     playerOne.roll();
-    // SwitchUser();
     $(".p1-score").text(" " + playerOne.turnScore); 
   })
   $("#hold-player-one").click(function() {
