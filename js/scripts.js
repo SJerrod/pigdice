@@ -31,8 +31,11 @@ function SwitchUser () {
 
 // Roll button method, outputs a random number
 Game.prototype.roll = function() {
+  let dice = document.getElementsByClassName("dice");
+  let diceStatus = document.getElementById("dice-status");
   let newRoll = Math.floor((Math.random() * 6) + 1);
-  console.log("your roll:" + newRoll);
+  dice.innerHTML = newRoll;
+  diceStatus.innerHTML = newRoll;
   if (newRoll != 1) {
     this.turnScore += newRoll; // pushes new roll into turnScore
     if (this.totalScore + this.turnScore >= 100) {

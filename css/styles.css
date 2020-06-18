@@ -32,3 +32,17 @@ font-weight: bolder;
   width: 350px;
   text-align: center;
 }
+
+.dice {
+  width:150px;
+  height: 150px;
+  color: red;
+	background:#F5F5F5;
+	border:red 2px solid;
+  padding:50px;
+	font-size:34px;
+  text-align:center;
+  align-items: center;
+  margin-left:100px; 
+  float: center;
+}
