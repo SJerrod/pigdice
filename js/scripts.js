@@ -14,7 +14,7 @@ function Game () {
 }
 
 Game.prototype.winner = function() {
-  if (this.totalScore + this.turnScore >= 10) {
+  if (this.totalScore + this.turnScore >= 25) {
     (this.gameWins += 1) && (this.turnScore = 0) && (this.totalScore = 0);
     SwitchUser();
     confirm("Play again?");
@@ -45,7 +45,7 @@ Game.prototype.roll = function() {
   diceStatus.innerHTML = newRoll;
   if (newRoll != 1) {
     this.turnScore += newRoll; // pushes new roll into turnScore
-    if (this.totalScore + this.turnScore >= 10) {
+    if (this.totalScore + this.turnScore >= 25) {
       alert("You won!");
       this.totalScore = 0
       this.winner;
